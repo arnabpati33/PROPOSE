@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+//ARNAB PATI
+int main() {
+    char answer[4]; // To store "yes" or "no" (plus null terminator)
+
+    printf("Do you love me? (yes or no): ");
+    scanf("%3s", answer); // Reads up to 3 characters + null terminator
+
+    // Convert to lowercase to make the input case-insensitive
+    for(int i = 0; answer[i]; i++) {
+        if (answer[i] >= 'A' && answer[i] <= 'Z') {
+            answer[i] += 'a' - 'A';
+        }
+    }
+
+    if (strcmp(answer, "yes") == 0) {
+        printf("I love you too!\n");
+    } else if (strcmp(answer, "no") == 0) {
+        printf("That's okay, maybe another time.\n");
+    } else {
+        printf("Invalid input. Please answer with 'yes' or 'no'.\n");
+    }
+
+    return 0;
+}
